@@ -5,7 +5,7 @@ public class playerControl : MonoBehaviour {
 
 	float xSpeed;
 	float speed = 10;
-	float colorChangeSpeed = 1.5f;
+	float colorChangeSpeed = 4f;
 
 	bool colorChanged = false;
 
