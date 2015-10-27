@@ -8,9 +8,12 @@ public class playerControl : MonoBehaviour {
 
 	bool colorChanged = false;
 
+	public string bckColor;
+
+
 	// Use this for initialization
-	void Start () {
-	
+	void Start () {	
+
 	}
 	
 	// Update is called once per frame
@@ -18,8 +21,10 @@ public class playerControl : MonoBehaviour {
 
 		xSpeed = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 
-	
 		transform.Translate (Vector3.right * xSpeed);
+
+		Debug.Log(bckColor);
+		Debug.Log(gameObject.tag);
 
 
 		if(colorChanged == false){
@@ -30,7 +35,8 @@ public class playerControl : MonoBehaviour {
 				colorChanged = true;
 				
 				Invoke ("allowColorChanging", 4f);
-				
+
+				gameObject.tag = "Cyan";
 			}
 
 
@@ -38,9 +44,10 @@ public class playerControl : MonoBehaviour {
 				
 				GetComponent<Renderer>().material.color = Color.blue;
 				colorChanged = true;
-				
+
 				Invoke ("allowColorChanging", 4f);
-				
+
+				gameObject.tag = "Blue";
 			}
 
 
@@ -50,25 +57,43 @@ public class playerControl : MonoBehaviour {
 				colorChanged = true;
 				
 				Invoke ("allowColorChanging", 4f);
-				
+
+				gameObject.tag = "Magenta";
 			}
 
 
 			if(Input.GetKey(KeyCode.R)){
 
-			GetComponent<Renderer>().material.color = Color.red;
-			colorChanged = true;
+			    GetComponent<Renderer>().material.color = Color.red;
+			    colorChanged = true;
 
-			Invoke ("allowColorChanging", 4f);
+			    Invoke ("allowColorChanging", 4f);
 
+				gameObject.tag = "Red";
 			}
 
 		}
 
+		RaycastHit rayColor;
+
+		if (Physics.Raycast (transform.position, transform.forward, out rayColor)) {
+
+			bckColor = rayColor.collider.tag;
+
+		}
+
 	}
+
 	void allowColorChanging(){
 		
 		colorChanged = false;
 		
 	}
+
+	void OnDrawGizmos (){
+
+		Gizmos.DrawRay (transform.position, new Vector3 (0, 0, 2));
+
+	}
+
 }
