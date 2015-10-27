@@ -5,6 +5,7 @@ public class playerControl : MonoBehaviour {
 
 	float xSpeed;
 	float speed = 10;
+	float colorChangeSpeed = 1.5f;
 
 	bool colorChanged = false;
 
@@ -29,7 +30,7 @@ public class playerControl : MonoBehaviour {
 				GetComponent<Renderer>().material.color = Color.cyan;
 				colorChanged = true;
 				
-				Invoke ("allowColorChanging", 4f);
+				Invoke ("allowColorChanging", colorChangeSpeed);
 				
 			}
 
@@ -39,7 +40,7 @@ public class playerControl : MonoBehaviour {
 				GetComponent<Renderer>().material.color = Color.blue;
 				colorChanged = true;
 				
-				Invoke ("allowColorChanging", 4f);
+				Invoke ("allowColorChanging", colorChangeSpeed);
 				
 			}
 
@@ -49,7 +50,7 @@ public class playerControl : MonoBehaviour {
 				GetComponent<Renderer>().material.color = Color.magenta;
 				colorChanged = true;
 				
-				Invoke ("allowColorChanging", 4f);
+				Invoke ("allowColorChanging", colorChangeSpeed);
 				
 			}
 
@@ -59,7 +60,7 @@ public class playerControl : MonoBehaviour {
 			GetComponent<Renderer>().material.color = Color.red;
 			colorChanged = true;
 
-			Invoke ("allowColorChanging", 4f);
+			Invoke ("allowColorChanging", colorChangeSpeed);
 
 			}
 
