@@ -25,21 +25,25 @@ public class detection : MonoBehaviour {
 
 		Debug.Log (wallColor);
 
-		if (wallColor == col.gameObject.tag) {
+		if (col.gameObject.name == "Player") {
 
-			Debug.Log ("NVM");
+			if (wallColor == col.gameObject.tag) {
+
+				Debug.Log ("NVM");
 
 
-		} else {
+			} else {
 
-			int currentLevel = Application.loadedLevel;
-			Debug.Log (currentLevel);
+				int currentLevel = Application.loadedLevel;
+				Debug.Log (currentLevel);
 
-			Debug.Log ("REKT");
+				Debug.Log ("REKT");
 
-			Destroy (col.gameObject);
+				Destroy (col.gameObject);
 
-			Application.LoadLevel(currentLevel);
+				Application.LoadLevel (currentLevel);
+
+			}
 
 		}
 	}
