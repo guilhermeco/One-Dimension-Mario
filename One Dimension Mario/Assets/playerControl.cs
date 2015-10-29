@@ -1,26 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class playerControl : MonoBehaviour {
+public class playerControl : MonoBehaviour
+{
 
 	float xSpeed;
 	float speed = 10;
 	float colorChangeSpeed = 4f;
-
 	bool colorChanged = false;
-
 	public string bckColor;
 
 
 	// Use this for initialization
-	void Start () {	
+	void Start ()
+	{	
 
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 
-		xSpeed = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+		xSpeed = Input.GetAxis ("Horizontal") * speed * Time.deltaTime;
 
 		transform.Translate (Vector3.right * xSpeed);
 
@@ -28,67 +29,47 @@ public class playerControl : MonoBehaviour {
 		//Debug.Log(gameObject.tag);
 
 
-		if(colorChanged == false){
+		if (colorChanged == false) {
 
-			if(Input.GetKey(KeyCode.Q)){
+			if (Input.GetKey (KeyCode.Q)) {
 				
-				GetComponent<Renderer>().material.color = Color.cyan;
+				GetComponent<Renderer> ().material.color = Color.cyan;
 				colorChanged = true;
 				
-<<<<<<< HEAD
 				Invoke ("allowColorChanging", colorChangeSpeed);
-				
-=======
-				Invoke ("allowColorChanging", 4f);
 
 				gameObject.tag = "Cyan";
->>>>>>> e5abfdd0a918d95d4a7f75f00c99027c3c0bad74
 			}
 
 
-			if(Input.GetKey(KeyCode.W)){
+			if (Input.GetKey (KeyCode.W)) {
 				
-				GetComponent<Renderer>().material.color = Color.blue;
+				GetComponent<Renderer> ().material.color = Color.blue;
 				colorChanged = true;
-<<<<<<< HEAD
-				
-				Invoke ("allowColorChanging", colorChangeSpeed);
-				
-=======
 
-				Invoke ("allowColorChanging", 4f);
+				Invoke ("allowColorChanging", colorChangeSpeed);
 
 				gameObject.tag = "Blue";
->>>>>>> e5abfdd0a918d95d4a7f75f00c99027c3c0bad74
 			}
 
 
-			if(Input.GetKey(KeyCode.E)){
+			if (Input.GetKey (KeyCode.E)) {
 				
-				GetComponent<Renderer>().material.color = Color.magenta;
+				GetComponent<Renderer> ().material.color = Color.magenta;
 				colorChanged = true;
 				
-<<<<<<< HEAD
 				Invoke ("allowColorChanging", colorChangeSpeed);
-				
-=======
-				Invoke ("allowColorChanging", 4f);
 
 				gameObject.tag = "Magenta";
->>>>>>> e5abfdd0a918d95d4a7f75f00c99027c3c0bad74
 			}
 
 
-			if(Input.GetKey(KeyCode.R)){
+			if (Input.GetKey (KeyCode.R)) {
 
-			    GetComponent<Renderer>().material.color = Color.red;
-			    colorChanged = true;
+				GetComponent<Renderer> ().material.color = Color.red;
+				colorChanged = true;
 
-<<<<<<< HEAD
-			Invoke ("allowColorChanging", colorChangeSpeed);
-=======
-			    Invoke ("allowColorChanging", 4f);
->>>>>>> e5abfdd0a918d95d4a7f75f00c99027c3c0bad74
+				Invoke ("allowColorChanging", colorChangeSpeed);
 
 				gameObject.tag = "Red";
 			}
@@ -105,13 +86,15 @@ public class playerControl : MonoBehaviour {
 
 	}
 
-	void allowColorChanging(){
+	void allowColorChanging ()
+	{
 		
 		colorChanged = false;
 		
 	}
 
-	void OnDrawGizmos (){
+	void OnDrawGizmos ()
+	{
 
 		Gizmos.DrawRay (transform.position, new Vector3 (0, 0, 2));
 

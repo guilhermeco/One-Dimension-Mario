@@ -3,10 +3,8 @@ using System.Collections;
 
 public class Rotating : MonoBehaviour {
 
-	float rotationAmount = 1.5f;
-	//public float rotationDirection = 1;
-
-	public bool rotationDirection = false;
+	float rotationAmount = 15f;
+	public float rotationDirection = 1;
 
 
 	// Use this for initialization
@@ -17,12 +15,7 @@ public class Rotating : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		transform.Rotate(Vector3.forward * rotationAmount);
-
-		if(rotationDirection == true){
-
-			rotationAmount *= -1;
-		}
+		transform.Rotate(Vector3.forward * rotationAmount * Time.deltaTime * rotationDirection);
 
 	}
 }

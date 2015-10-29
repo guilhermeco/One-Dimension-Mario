@@ -3,14 +3,12 @@ using System.Collections;
 
 public class blinkLight : MonoBehaviour {
 
-	bool blinkNow = false;
+	bool blinkNow = true;
 
-	// Use this for initialization
 	void Start () {
 	
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 		if(blinkNow == true){
@@ -19,10 +17,11 @@ public class blinkLight : MonoBehaviour {
 
 			Invoke ("makeItBlink", 2f);
 
-
-		}else {
+		}else if(blinkNow == false){
 
 			GetComponent<MeshRenderer>().enabled = true;
+
+			Invoke ("stopBlink", 2f);
 
 		}
 	}
@@ -34,9 +33,9 @@ public class blinkLight : MonoBehaviour {
 
 	}
 
-//	void stopBlink(){
-//
-//		blinkNow = false;
-//
-//	}
+	void stopBlink(){
+
+		blinkNow = false;
+
+	}
 }
