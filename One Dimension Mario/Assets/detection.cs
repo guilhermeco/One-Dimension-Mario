@@ -17,7 +17,7 @@ public class detection : MonoBehaviour {
 	
 	}
 
-	void OnCollisionEnter (Collision col) {
+	void OnTriggerStay (Collider col) {
 
 		Debug.Log ("I SEE YOU NERDS");
 
