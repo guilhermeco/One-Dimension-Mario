@@ -1,41 +1,40 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class blinkLight : MonoBehaviour {
-
-	bool blinkNow = true;
-
-	void Start () {
+public class blinkLight : MonoBehaviour
+{
 	
+
+	float timer;
+	float waitTime = 1.5f;
+	float resetPoint;
+
+	void Start ()
+	{
+
+		resetPoint = waitTime * 3;
 	}
-	
-	void Update () {
-	
-		if(blinkNow == true){
-			GetComponent<MeshRenderer>().enabled = false;
-			blinkNow = false;
 
-			Invoke ("makeItBlink", 2f);
+	void Update ()
+	{
 
-		}else if(blinkNow == false){
+		timer += Time.deltaTime;
 
-			GetComponent<MeshRenderer>().enabled = true;
+		if (timer < waitTime) {
 
-			Invoke ("stopBlink", 2f);
+			GetComponent<MeshRenderer> ().enabled = true;
 
+		}
+		
+		if (timer > waitTime) {
+			
+			GetComponent<MeshRenderer> ().enabled = false;
+			
+		}
+
+		if (timer > resetPoint) {
+			timer = 0;
 		}
 	}
 
-
-	void makeItBlink(){
-
-		blinkNow = true;
-
-	}
-
-	void stopBlink(){
-
-		blinkNow = false;
-
-	}
 }
