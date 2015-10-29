@@ -6,13 +6,13 @@ public class blinkLight : MonoBehaviour
 	
 
 	float timer;
-	float waitTime = 1.5f;
-	float resetPoint;
+	float blinkNow = 1.5f;
+	float appearPoint;
 
 	void Start ()
 	{
 
-		resetPoint = waitTime * 3;
+		appearPoint = blinkNow * 3;
 	}
 
 	void Update ()
@@ -20,19 +20,19 @@ public class blinkLight : MonoBehaviour
 
 		timer += Time.deltaTime;
 
-		if (timer < waitTime) {
+		if (timer < blinkNow) {
 
 			GetComponent<MeshRenderer> ().enabled = true;
 
 		}
 		
-		if (timer > waitTime) {
+		if (timer > blinkNow) {
 			
 			GetComponent<MeshRenderer> ().enabled = false;
 			
 		}
 
-		if (timer > resetPoint) {
+		if (timer > appearPoint) {
 			timer = 0;
 		}
 	}
