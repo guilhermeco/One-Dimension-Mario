@@ -6,35 +6,44 @@ public class blinkLight : MonoBehaviour
 	
 
 	float timer;
-	float blinkNow = 1.5f;
+	float blinkNow = 2f;
 	float appearPoint;
+
+	//public bool noMoreBlink = false;
 
 	void Start ()
 	{
 
-		appearPoint = blinkNow * 3;
+		appearPoint = blinkNow * 2;
 	}
 
 	void Update ()
 	{
 
-		timer += Time.deltaTime;
+		//if (noMoreBlink == false) {
+			timer += Time.deltaTime;
 
-		if (timer < blinkNow) {
+			if (timer < blinkNow) {
 
-			GetComponent<MeshRenderer> ().enabled = true;
+				GetComponent<MeshRenderer> ().enabled = true;
+			GetComponent<BoxCollider>().enabled = true;
+				//gameObject.SetActive (true);
 
-		}
+			}
 		
-		if (timer > blinkNow) {
+			if (timer > blinkNow) {
 			
-			GetComponent<MeshRenderer> ().enabled = false;
-			
-		}
+				GetComponent<MeshRenderer> ().enabled = false;
+			GetComponent<BoxCollider>().enabled = false;
 
-		if (timer > appearPoint) {
-			timer = 0;
-		}
+				//gameObject.SetActive (false);
+
+			}
+
+			if (timer > appearPoint) {
+				timer = 0;
+			}
+		//}
 	}
 
 }

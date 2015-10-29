@@ -1,19 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class caughtByLight : MonoBehaviour {
+public class caughtByLight : MonoBehaviour
+{
 
-	void Update () {
+	bool stopBlink = false;
+	
+	void Update ()
+	{
 	
 	}
 
-	void OnTriggerEnter(Collider col){
+
+	void OnTriggerEnter (Collider col)
+	{
 
 		if (col.gameObject.name == "Player") {
 
-		GetComponent<Renderer> ().material.color = Color.yellow;
+			GetComponent<Renderer> ().material.color = Color.yellow;
+		
+			Invoke("restartLevel", 1.5f);
+
+			stopBlink = true;
+		
+		}
+
+		if(stopBlink == true && isActiveAndEnabled){
+
+		//GetComponent<blinkLight>().noMoreBlink = true;
 
 		}
+
+	}
+
+
+	void restartLevel(){
+
+		int currentLevel = Application.loadedLevel;
+
+		Application.LoadLevel(currentLevel);
 
 	}
 }

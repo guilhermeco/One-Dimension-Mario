@@ -3,13 +3,13 @@ using System.Collections;
 
 public class changeDirection : MonoBehaviour {
 
-void OnTriggerEnter(Collider other){
+void OnTriggerEnter(Collider col){
 
-		//if (col.gameObject.tag == "Flashlight") {
+		if (col.gameObject.name == "Flashlight") {
 
 		GameObject.Find ("Point").GetComponent<Rotating>().rotationDirection *= -1;
 
-		//}
+		}
 
 	}
 }
