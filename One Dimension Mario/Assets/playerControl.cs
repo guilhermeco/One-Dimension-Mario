@@ -24,8 +24,8 @@ public class playerControl : MonoBehaviour {
 
 		transform.Translate (Vector3.right * xSpeed);
 
-		Debug.Log(bckColor);
-		Debug.Log(gameObject.tag);
+		//Debug.Log(bckColor);
+		//Debug.Log(gameObject.tag);
 
 
 		if(colorChanged == false){
