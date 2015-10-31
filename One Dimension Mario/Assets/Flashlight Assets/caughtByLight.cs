@@ -27,8 +27,6 @@ public class caughtByLight : MonoBehaviour
 
 		if(stopBlink == true && isActiveAndEnabled){
 
-		//GetComponent<blinkLight>().noMoreBlink = true;
-
 		}
 
 	}
