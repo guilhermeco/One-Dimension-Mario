@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class startGame : MonoBehaviour {
+public class movePlayer : MonoBehaviour {
+
+	public float xSpeed = 0.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -10,11 +12,8 @@ public class startGame : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	
+		transform.position = transform.position + new Vector3 (0.2f, 0, 0);
 
-	}
-
-	void OnTriggerEnter(Collider other){
-		Debug.Log ("hit");
-		Application.LoadLevel("Gui Scene 1");
 	}
 }

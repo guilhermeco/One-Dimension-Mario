@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class startGame : MonoBehaviour {
+public class startExpPart : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -10,11 +10,11 @@ public class startGame : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+	
 	}
 
 	void OnTriggerEnter(Collider other){
 		Debug.Log ("hit");
-		Application.LoadLevel("Gui Scene 1");
+		gameObject.GetComponent<ParticleSystem> ().enableEmission = true;
 	}
 }
