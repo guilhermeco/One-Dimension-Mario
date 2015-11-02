@@ -25,10 +25,6 @@ public class caughtByLight : MonoBehaviour
 		
 		}
 
-		if(stopBlink == true && isActiveAndEnabled){
-
-		}
-
 	}
 
 
