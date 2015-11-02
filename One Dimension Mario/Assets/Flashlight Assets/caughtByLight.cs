@@ -3,8 +3,6 @@ using System.Collections;
 
 public class caughtByLight : MonoBehaviour
 {
-
-	bool stopBlink = false;
 	
 	void Update ()
 	{
@@ -20,9 +18,7 @@ public class caughtByLight : MonoBehaviour
 			GetComponent<Renderer> ().material.color = Color.yellow;
 		
 			Invoke("restartLevel", 1.5f);
-
-			stopBlink = true;
-		
+					
 		}
 
 	}
