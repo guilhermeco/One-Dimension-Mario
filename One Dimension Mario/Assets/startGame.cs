@@ -14,6 +14,7 @@ public class startGame : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
+		Debug.Log ("hit");
 		Application.LoadLevel("Gui Scene 1");
 	}
 }
