@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class moveDown : MonoBehaviour {
-	
+public class upAndDown : MonoBehaviour {
+
+
+	float timer;
 	float dropSpeed = -0.25f;
-	public float timer = 0;
-	
+
 	// Use this for initialization
 	void Start () {
 
+		timer = 0;
 		
 	}
 	
@@ -16,14 +18,15 @@ public class moveDown : MonoBehaviour {
 	void Update () {
 
 		timer++;
-
-		if (timer >= 150) {
-
-			Destroy(gameObject);
-
-		}
-
+			
 		gameObject.transform.position = transform.position + new Vector3 (0, dropSpeed, 0);
+		
+		if (timer >= 60) {
+			
+		    dropSpeed = -dropSpeed;
 
-	}
+			timer = 0;
+			
+		}
+    }
 }
