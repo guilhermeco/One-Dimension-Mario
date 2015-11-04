@@ -3,10 +3,10 @@ using System.Collections;
 
 public class dropSpikes : MonoBehaviour {
 	
-	bool canDrop = false;
-	public float dropY;
+	bool canDrop = true;
+	float dropY;
     float dropSpeed = -0.25f;
-	public float posY;
+	float posY;
 
 	// Use this for initialization
 	void Start () {
@@ -34,7 +34,7 @@ public class dropSpikes : MonoBehaviour {
 
 			Debug.Log("I SET ONE CARD");
 
-			canDrop = false;
+
 
 		}
 
