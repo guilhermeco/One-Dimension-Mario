@@ -23,18 +23,12 @@ public class dropSpikes : MonoBehaviour {
 		if(canDrop == true){
 			
 			gameObject.transform.position = transform.position + new Vector3 (0, dropSpeed, 0);
-
-			Debug.Log("DROP THE BASS");
 			
 		}
 
 		if(posY < dropY) {
 
 			gameObject.transform.position = transform.position + new Vector3 (0, 15, 0);
-
-			Debug.Log("I SET ONE CARD");
-
-
 
 		}
 
@@ -45,8 +39,6 @@ public class dropSpikes : MonoBehaviour {
 		if (col.gameObject.name == "Player") {
 
 			canDrop = true;
-
-			Debug.Log("I ACTIVATE MY TRAP CARD");
 
 		}
 	}

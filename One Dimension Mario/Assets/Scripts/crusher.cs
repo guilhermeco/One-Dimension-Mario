@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class deathSpike : MonoBehaviour {
-	
+public class crusher : MonoBehaviour {
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,19 +17,17 @@ public class deathSpike : MonoBehaviour {
 	
 	void OnTriggerStay (Collider col) {
 		
-		Debug.Log ("I SEE YOU NERDS");
+		Debug.Log ("TOUCHING SOMETHING");
 		
 		if (col.gameObject.name == "Player") {
 			
 			if (gameObject.tag == col.gameObject.tag) {
 				
 				Debug.Log ("NVM");
-				
-				
+
 			} else {
 				
 				int currentLevel = Application.loadedLevel;
-				Debug.Log (currentLevel);
 				
 				Debug.Log ("REKT");
 				
@@ -41,4 +39,5 @@ public class deathSpike : MonoBehaviour {
 			
 		}
 	}
+
 }
