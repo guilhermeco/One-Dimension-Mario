@@ -6,7 +6,7 @@ public class playerControl : MonoBehaviour
 
 	float xSpeed;
 	float speed = 10;
-	float colorChangeSpeed = 1f;
+	float colorChangeSpeed = 0f;
 	bool colorChanged = false;
 	public string bckColor;
 
