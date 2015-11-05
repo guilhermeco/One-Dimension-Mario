@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class startExpPart : MonoBehaviour {
-	
+public class startExpPart2 : MonoBehaviour {
+
 	public GameObject Exp;
 
 	// Use this for initialization
 	void Start () {
-	
 	
 	}
 	
@@ -18,6 +17,6 @@ public class startExpPart : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		Debug.Log ("hit");
-		Instantiate (Exp, GameObject.Find ("Trigger1").transform.position, GameObject.Find ("Trigger1").transform.rotation);
+		Instantiate (Exp, GameObject.Find ("Trigger2").transform.position, GameObject.Find ("Trigger2").transform.rotation);
 	}
 }
