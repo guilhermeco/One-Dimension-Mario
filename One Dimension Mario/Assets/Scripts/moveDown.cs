@@ -3,7 +3,7 @@ using System.Collections;
 
 public class moveDown : MonoBehaviour {
 	
-	float dropSpeed = -0.25f;
+	float dropSpeed = 0.25f;
 	public float timer = 0;
 	
 	// Use this for initialization
@@ -23,7 +23,7 @@ public class moveDown : MonoBehaviour {
 
 		}
 
-		gameObject.transform.position = transform.position + new Vector3 (0, dropSpeed, 0);
+		gameObject.transform.position = transform.position + new Vector3 (dropSpeed, 0, 0);
 
 	}
 }
